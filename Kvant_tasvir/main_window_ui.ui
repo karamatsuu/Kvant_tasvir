@@ -22,119 +22,246 @@
   <widget class="QWidget" name="centralwidget">
    <property name="font">
     <font>
-     <family>Times New Roman</family>
      <pointsize>10</pointsize>
     </font>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
     <item>
-     <widget class="QTabWidget" name="tabWidget">
-      <property name="font">
-       <font>
-        <family>Times New Roman</family>
-        <pointsize>12</pointsize>
-       </font>
+     <widget class="QSplitter" name="mainSplitter">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
       </property>
-      <property name="currentIndex">
-       <number>0</number>
+      <property name="childrenCollapsible">
+       <bool>true</bool>
       </property>
-      <widget class="QWidget" name="tab">
-       <attribute name="title">
-        <string>Asl tasvir</string>
-       </attribute>
-       <widget class="QLabel" name="label">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>801</width>
-          <height>451</height>
-         </rect>
+      <widget class="QWidget" name="left_panel">
+       <layout class="QVBoxLayout" name="leftLayout">
+        <property name="leftMargin">
+         <number>6</number>
         </property>
-        <property name="text">
-         <string>rasm</string>
+        <property name="topMargin">
+         <number>6</number>
         </property>
-       </widget>
+        <property name="rightMargin">
+         <number>6</number>
+        </property>
+        <property name="bottomMargin">
+         <number>6</number>
+        </property>
+        <item>
+         <widget class="QTreeWidget" name="algorithm_tree">
+          <property name="headerHidden">
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string notr="true">1</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
       </widget>
-      <widget class="QWidget" name="tab_2">
-       <attribute name="title">
-        <string>Klassik usul</string>
-       </attribute>
-       <widget class="QLabel" name="label_2">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>821</width>
-          <height>451</height>
-         </rect>
+      <widget class="QWidget" name="center_panel">
+       <layout class="QVBoxLayout" name="centerLayout">
+        <property name="leftMargin">
+         <number>6</number>
         </property>
-        <property name="text">
-         <string>rasm</string>
+        <property name="topMargin">
+         <number>6</number>
         </property>
-       </widget>
+        <property name="rightMargin">
+         <number>6</number>
+        </property>
+        <property name="bottomMargin">
+         <number>6</number>
+        </property>
+        <item>
+         <widget class="QTabWidget" name="tabWidget">
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="tab">
+           <attribute name="title">
+            <string>Asl tasvir</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="tabLayout">
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel { color: #888888; font-size: 14pt; }</string>
+              </property>
+              <property name="text">
+               <string>📂 Rasm yuklanmagan</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_2">
+           <attribute name="title">
+            <string>Klassik usul</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="tabLayout_2">
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel { color: #888888; font-size: 14pt; }</string>
+              </property>
+              <property name="text">
+               <string>📂 Rasm yuklanmagan</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_3">
+           <attribute name="title">
+            <string>Kvant usul</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="tabLayout_3">
+            <item>
+             <widget class="QLabel" name="label_3">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel { color: #888888; font-size: 14pt; }</string>
+              </property>
+              <property name="text">
+               <string>📂 Rasm yuklanmagan</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_7">
+           <attribute name="title">
+            <string>Asl-Klassik-Kvant</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="comparisonLayout">
+            <property name="stretch">
+             <string>1,1,1</string>
+            </property>
+            <item>
+             <widget class="QLabel" name="label_11">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel { color: #888888; font-size: 14pt; }</string>
+              </property>
+              <property name="text">
+               <string>📂 Rasm yuklanmagan</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_10">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel { color: #888888; font-size: 14pt; }</string>
+              </property>
+              <property name="text">
+               <string>📂 Rasm yuklanmagan</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_12">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QLabel { color: #888888; font-size: 14pt; }</string>
+              </property>
+              <property name="text">
+               <string>📂 Rasm yuklanmagan</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
       </widget>
-      <widget class="QWidget" name="tab_3">
-       <attribute name="title">
-        <string>Kvant usul</string>
-       </attribute>
-       <widget class="QLabel" name="label_3">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>0</y>
-          <width>801</width>
-          <height>461</height>
-         </rect>
+      <widget class="QWidget" name="params_panel">
+       <layout class="QVBoxLayout" name="paramsLayout">
+        <property name="leftMargin">
+         <number>6</number>
         </property>
-        <property name="text">
-         <string>rasm</string>
+        <property name="topMargin">
+         <number>6</number>
         </property>
-       </widget>
-      </widget>
-      <widget class="QWidget" name="tab_7">
-       <attribute name="title">
-        <string>Asl-Klassik-Kvant</string>
-       </attribute>
-       <widget class="QLabel" name="label_11">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>0</y>
-          <width>261</width>
-          <height>311</height>
-         </rect>
+        <property name="rightMargin">
+         <number>6</number>
         </property>
-        <property name="text">
-         <string>rasm</string>
+        <property name="bottomMargin">
+         <number>6</number>
         </property>
-       </widget>
-       <widget class="QLabel" name="label_10">
-        <property name="geometry">
-         <rect>
-          <x>310</x>
-          <y>10</y>
-          <width>241</width>
-          <height>301</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>rasm</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="label_12">
-        <property name="geometry">
-         <rect>
-          <x>580</x>
-          <y>10</y>
-          <width>231</width>
-          <height>301</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>rasm</string>
-        </property>
-       </widget>
+       </layout>
       </widget>
      </widget>
     </item>
@@ -151,14 +278,12 @@
    </property>
    <property name="font">
     <font>
-     <family>Times New Roman</family>
      <pointsize>13</pointsize>
     </font>
    </property>
    <widget class="QMenu" name="menuFayl">
     <property name="font">
      <font>
-      <family>Times New Roman</family>
       <pointsize>13</pointsize>
      </font>
     </property>
@@ -174,7 +299,6 @@
    <widget class="QMenu" name="menuKlassik_usullar">
     <property name="font">
      <font>
-      <family>Times New Roman</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -184,7 +308,6 @@
     <widget class="QMenu" name="menuRang_modellarini_o_zgartirish">
      <property name="font">
       <font>
-       <family>Times New Roman</family>
        <pointsize>10</pointsize>
       </font>
      </property>
@@ -198,7 +321,6 @@
     <widget class="QMenu" name="menuTasvir_o_lchamini_tanlash">
      <property name="font">
       <font>
-       <family>Times New Roman</family>
        <pointsize>10</pointsize>
       </font>
      </property>
@@ -216,7 +338,6 @@
     <widget class="QMenu" name="menuFilterlar">
      <property name="font">
       <font>
-       <family>Times New Roman</family>
        <pointsize>10</pointsize>
       </font>
      </property>
@@ -234,7 +355,6 @@
     <widget class="QMenu" name="menuKonrtasni_yaxshilash">
      <property name="font">
       <font>
-       <family>Times New Roman</family>
        <pointsize>10</pointsize>
       </font>
      </property>
@@ -278,7 +398,6 @@
     <widget class="QMenu" name="menuBinarlash">
      <property name="font">
       <font>
-       <family>Times New Roman</family>
        <pointsize>10</pointsize>
       </font>
      </property>
@@ -292,7 +411,6 @@
     <widget class="QMenu" name="menuMorfologik_ishlov_berish">
      <property name="font">
       <font>
-       <family>Times New Roman</family>
        <pointsize>10</pointsize>
       </font>
      </property>
@@ -311,7 +429,6 @@
     <widget class="QMenu" name="menuSegmentlash">
      <property name="font">
       <font>
-       <family>Times New Roman</family>
        <pointsize>10</pointsize>
       </font>
      </property>
@@ -330,7 +447,6 @@
     <widget class="QMenu" name="menuBelgilarni_ajratish">
      <property name="font">
       <font>
-       <family>Times New Roman</family>
        <pointsize>10</pointsize>
       </font>
      </property>
@@ -354,7 +470,6 @@
    <widget class="QMenu" name="menuKvant_usullar">
     <property name="font">
      <font>
-      <family>Times New Roman</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -465,7 +580,6 @@
    <widget class="QMenu" name="menuDastur_haqida">
     <property name="font">
      <font>
-      <family>Times New Roman</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -480,7 +594,6 @@
    <widget class="QMenu" name="menuYordam">
     <property name="font">
      <font>
-      <family>Times New Roman</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -496,7 +609,6 @@
    <widget class="QMenu" name="menuTasniflash_va_tanib_olish">
     <property name="font">
      <font>
-      <family>Times New Roman</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -509,7 +621,6 @@
    <widget class="QMenu" name="menuBaholash">
     <property name="font">
      <font>
-      <family>Times New Roman</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -528,18 +639,45 @@
      </property>
      <addaction name="actionBrisque"/>
     </widget>
-    <addaction name="menuEtalonlli"/>
-    <addaction name="menuEtalonsiz"/>
-   </widget>
-   <addaction name="menuFayl"/>
-   <addaction name="menuKlassik_usullar"/>
-   <addaction name="menuKvant_usullar"/>
-   <addaction name="menuBaholash"/>
-   <addaction name="menuTasniflash_va_tanib_olish"/>
-   <addaction name="menuDastur_haqida"/>
-   <addaction name="menuYordam"/>
+   <addaction name="menuEtalonlli"/>
+   <addaction name="menuEtalonsiz"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenu" name="menuKorinish">
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="title">
+    <string>Ko'rinish</string>
+   </property>
+   <addaction name="actionToggleLeftPanel"/>
+  </widget>
+  <addaction name="menuFayl"/>
+  <addaction name="menuKorinish"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <widget class="QProgressBar" name="progressBar">
+    <property name="maximumSize">
+     <size>
+      <width>200</width>
+      <height>16777215</height>
+     </size>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>200</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="visible">
+     <bool>false</bool>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+   </widget>
+  </widget>
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
     <string>toolBar</string>
@@ -555,6 +693,17 @@
    <addaction name="actionQayta_saqlash"/>
    <addaction name="actionChiqish"/>
   </widget>
+  <action name="actionToggleLeftPanel">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="checked">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Sol panelni yashirish/ko'rsatish</string>
+   </property>
+  </action>
   <action name="actionOchish">
    <property name="icon">
     <iconset resource="rasm/icon.qrc">
@@ -565,7 +714,6 @@
    </property>
    <property name="font">
     <font>
-     <family>Times New Roman</family>
      <pointsize>13</pointsize>
     </font>
    </property>
@@ -618,7 +766,6 @@
    </property>
    <property name="font">
     <font>
-     <family>Times New Roman</family>
      <pointsize>12</pointsize>
     </font>
    </property>

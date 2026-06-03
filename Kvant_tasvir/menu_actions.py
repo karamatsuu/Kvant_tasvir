@@ -29,6 +29,7 @@ class FileMenuController(QObject):
         super().__init__(main_window)
         self._mw = main_window
         self._label = target_label
+        self._labels = self._collect_image_labels(target_label)
         self.state = FileState()
 
     # -------- Wiring (main_window.py dan chaqiriladi) --------
@@ -119,16 +120,26 @@ class FileMenuController(QObject):
         if not self.state.pixmap or self.state.pixmap.isNull():
             return
 
-        w = max(1, self._label.width())
-        h = max(1, self._label.height())
-        scaled = self.state.pixmap.scaled(w, h, Qt.KeepAspectRatio, Qt.SmoothTransformation)
-        self._label.setPixmap(scaled)
-        self._label.setAlignment(Qt.AlignCenter)
+        for label in self._labels:
+            w = max(1, label.width())
+            h = max(1, label.height())
+            scaled = self.state.pixmap.scaled(w, h, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+            label.setPixmap(scaled)
+            label.setAlignment(Qt.AlignCenter)
 
     def on_target_resized(self):
         """main_window resize bo‘lganda chaqiriladi."""
         if self.state.pixmap and not self.state.pixmap.isNull():
             self._render_pixmap()
+
+    def _collect_image_labels(self, fallback_label: QLabel):
+        ui = getattr(self._mw, "ui", None)
+        labels = []
+        for name in ("label", "label_2", "label_3", "label_10", "label_11", "label_12"):
+            label = getattr(ui, name, None) if ui is not None else None
+            if isinstance(label, QLabel):
+                labels.append(label)
+        return labels or [fallback_label]
 
     def _show_error(self, msg: str):
         self.error.emit(msg)
