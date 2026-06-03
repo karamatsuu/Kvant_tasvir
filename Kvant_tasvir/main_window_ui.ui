@@ -1,0 +1,1195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>866</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Kvantda tasvirlar bilan ishlash</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Asl tasvir</string>
+       </attribute>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>801</width>
+          <height>451</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>rasm</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Klassik usul</string>
+       </attribute>
+       <widget class="QLabel" name="label_2">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>821</width>
+          <height>451</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>rasm</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_3">
+       <attribute name="title">
+        <string>Kvant usul</string>
+       </attribute>
+       <widget class="QLabel" name="label_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>801</width>
+          <height>461</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>rasm</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="tab_7">
+       <attribute name="title">
+        <string>Asl-Klassik-Kvant</string>
+       </attribute>
+       <widget class="QLabel" name="label_11">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>261</width>
+          <height>311</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>rasm</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_10">
+        <property name="geometry">
+         <rect>
+          <x>310</x>
+          <y>10</y>
+          <width>241</width>
+          <height>301</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>rasm</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_12">
+        <property name="geometry">
+         <rect>
+          <x>580</x>
+          <y>10</y>
+          <width>231</width>
+          <height>301</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>rasm</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>866</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>13</pointsize>
+    </font>
+   </property>
+   <widget class="QMenu" name="menuFayl">
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>13</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Fayl</string>
+    </property>
+    <addaction name="actionOchish"/>
+    <addaction name="actionSaqlash"/>
+    <addaction name="actionQayta_saqlash"/>
+    <addaction name="separator"/>
+    <addaction name="actionChiqish"/>
+   </widget>
+   <widget class="QMenu" name="menuKlassik_usullar">
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Klassik usullar</string>
+    </property>
+    <widget class="QMenu" name="menuRang_modellarini_o_zgartirish">
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>Rang modellarini o'zgartirish</string>
+     </property>
+     <addaction name="actionRGB_Grayscale"/>
+     <addaction name="actionRGB_HSV_Lab"/>
+     <addaction name="actionRGB_kanallarni_saqlash"/>
+    </widget>
+    <widget class="QMenu" name="menuTasvir_o_lchamini_tanlash">
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>Tasvir o'lchamini tanlash</string>
+     </property>
+     <addaction name="actionNearest_neihbor"/>
+     <addaction name="actionBilinear_interpolaton"/>
+     <addaction name="actionBicubic_interpolation"/>
+     <addaction name="actionLanczos_interpolation"/>
+     <addaction name="actionImage_downsampling_upsampling"/>
+     <addaction name="actionResolution_normalization"/>
+     <addaction name="actionCropping_resize"/>
+    </widget>
+    <widget class="QMenu" name="menuFilterlar">
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>Filterlar</string>
+     </property>
+     <addaction name="actionMean"/>
+     <addaction name="actionMedian"/>
+     <addaction name="actionGaussian"/>
+     <addaction name="actionBilateral"/>
+     <addaction name="actionFourier_transform"/>
+     <addaction name="actionWavelet_denoising"/>
+     <addaction name="actionWiener"/>
+    </widget>
+    <widget class="QMenu" name="menuKonrtasni_yaxshilash">
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>Konrtasni yaxshilash</string>
+     </property>
+     <addaction name="actionMin_Max"/>
+     <addaction name="actionLinear_contrast_stretching"/>
+     <addaction name="actionLogarithmic_transform"/>
+     <addaction name="actionPower_law_Gamma_correction"/>
+     <addaction name="actionHistogram_equalization_HE"/>
+     <addaction name="actionAdaptive_histogram_equalization_AHE"/>
+     <addaction name="actionContrst_Limited_AHE_CLAHE"/>
+     <addaction name="actionHigh_pass"/>
+     <addaction name="actionUnsharp_masking"/>
+    </widget>
+    <widget class="QMenu" name="menuIntensivlikni_normallashtirish">
+     <property name="title">
+      <string>Intensivlikni normallashtirish</string>
+     </property>
+     <addaction name="actionMin_Max_2"/>
+     <addaction name="actionZ_score"/>
+     <addaction name="actionMean_2"/>
+     <addaction name="actionL2"/>
+     <addaction name="actionHistogram"/>
+     <addaction name="actionDynamic_range_scaling_0_255_0_1"/>
+     <addaction name="actionContrast_stretching"/>
+    </widget>
+    <widget class="QMenu" name="menuKonturlarni_ajratish">
+     <property name="title">
+      <string>Konturlarni ajratish</string>
+     </property>
+     <addaction name="actionSobel"/>
+     <addaction name="actionPrewitt"/>
+     <addaction name="actionRoberts_cross"/>
+     <addaction name="actionLaplacian_of_Gaussian_LoG"/>
+     <addaction name="actionCanny_edge_detection"/>
+     <addaction name="actionThresholding"/>
+     <addaction name="actionKirsch_Schar"/>
+    </widget>
+    <widget class="QMenu" name="menuBinarlash">
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>Binarlash</string>
+     </property>
+     <addaction name="actionAniq_threshold"/>
+     <addaction name="actionDeteministik"/>
+     <addaction name="actionKodlashdan_oldin"/>
+    </widget>
+    <widget class="QMenu" name="menuMorfologik_ishlov_berish">
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>Morfologik ishlov berish</string>
+     </property>
+     <addaction name="actionErosion"/>
+     <addaction name="actionDilation"/>
+     <addaction name="actionopening"/>
+     <addaction name="actionCloseing"/>
+     <addaction name="actionStructuring_element"/>
+     <addaction name="actionKontur"/>
+     <addaction name="actionGradient"/>
+     <addaction name="actionKodlashdan_oldin_2"/>
+    </widget>
+    <widget class="QMenu" name="menuSegmentlash">
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>Segmentlash</string>
+     </property>
+     <addaction name="actionOtsu_thresholding"/>
+     <addaction name="actionAdaptive_thresholding"/>
+     <addaction name="actionRegion_growing"/>
+     <addaction name="actionRegion_splotting_merging"/>
+     <addaction name="actionContour_detection_segmentation"/>
+     <addaction name="actionK_means"/>
+     <addaction name="actionFuzzy_C_means"/>
+     <addaction name="actionGradient_va_topologiya_asosida_obektlarni_ajratish"/>
+    </widget>
+    <widget class="QMenu" name="menuBelgilarni_ajratish">
+     <property name="font">
+      <font>
+       <family>Times New Roman</family>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>Belgilarni ajratish</string>
+     </property>
+     <addaction name="actionXaff_usullari"/>
+    </widget>
+    <addaction name="menuRang_modellarini_o_zgartirish"/>
+    <addaction name="menuTasvir_o_lchamini_tanlash"/>
+    <addaction name="menuFilterlar"/>
+    <addaction name="menuKonrtasni_yaxshilash"/>
+    <addaction name="menuIntensivlikni_normallashtirish"/>
+    <addaction name="menuKonturlarni_ajratish"/>
+    <addaction name="menuBinarlash"/>
+    <addaction name="menuMorfologik_ishlov_berish"/>
+    <addaction name="menuSegmentlash"/>
+    <addaction name="menuBelgilarni_ajratish"/>
+    <addaction name="actionTasniflash_va_tanib_olish"/>
+   </widget>
+   <widget class="QMenu" name="menuKvant_usullar">
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Kvant usullar</string>
+    </property>
+    <widget class="QMenu" name="menuTasvirni_o_qish_va_formatlash_2">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="title">
+      <string>Tasvirni o'qish va formatlash</string>
+     </property>
+     <addaction name="actionQuantum_encoding"/>
+     <addaction name="actionimage_processing"/>
+     <addaction name="actionMeasurement"/>
+    </widget>
+    <widget class="QMenu" name="menuRangmodellarini_o_zgartirish">
+     <property name="title">
+      <string>Rang modellarini o'zgartirish</string>
+     </property>
+     <addaction name="actionRangni_kodlash"/>
+     <addaction name="actionFRQI"/>
+     <addaction name="actionNEQR"/>
+    </widget>
+    <widget class="QMenu" name="menuTasvir_o_lchamini_tanlash_2">
+     <property name="title">
+      <string>Tasvir o'lchamini tanlash</string>
+     </property>
+     <addaction name="actionFRQI_2"/>
+     <addaction name="actionNEQR_2"/>
+    </widget>
+    <widget class="QMenu" name="menuFiltrlar">
+     <property name="title">
+      <string>Filtrlar</string>
+     </property>
+     <addaction name="actionQuantum_measurement_based_denoising"/>
+     <addaction name="actionWavelet_Transform"/>
+     <addaction name="actionGaussian_2"/>
+     <addaction name="actionMedian_2"/>
+     <addaction name="actionFourier_Transform"/>
+     <addaction name="actionState_averaging"/>
+     <addaction name="actionImage_denoising_circuits"/>
+    </widget>
+    <widget class="QMenu" name="menuKontrasni_yaxshilash">
+     <property name="title">
+      <string>Kontrasni yaxshilash</string>
+     </property>
+     <addaction name="actionHistogram_equalization_QHE"/>
+     <addaction name="actionamplitude_redistribution"/>
+     <addaction name="actionFourier_Transform_QGT"/>
+     <addaction name="actioncontrast_enhancement_circuits"/>
+     <addaction name="actionHybrid_qoantum_classical"/>
+    </widget>
+    <widget class="QMenu" name="menuIntensivlikni_normallashtirish_2">
+     <property name="title">
+      <string>Intensivlikni normallashtirish</string>
+     </property>
+     <addaction name="actionAmplitude_normalization"/>
+     <addaction name="actionProbability_normalization"/>
+    </widget>
+    <widget class="QMenu" name="menuKonturlarni_ajratish_2">
+     <property name="title">
+      <string>Konturlarni ajratish</string>
+     </property>
+     <addaction name="actionGradient_operator"/>
+     <addaction name="actionImage_representation_NEQR_FRQI"/>
+     <addaction name="actionControlled_Not_CNOT"/>
+     <addaction name="actionToffoli_gate_piksel_farqlari"/>
+     <addaction name="actionQuantum_Sobel"/>
+     <addaction name="actionQFT_Quantum_Fourier_Transform"/>
+     <addaction name="actionHybrid_quantum_classical"/>
+    </widget>
+    <widget class="QMenu" name="menuBinarlash_2">
+     <property name="title">
+      <string>Binarlash</string>
+     </property>
+     <addaction name="actionKvant_o_lcham"/>
+     <addaction name="actionEhtimoliy"/>
+    </widget>
+    <widget class="QMenu" name="menuSegmentlash_2">
+     <property name="title">
+      <string>Segmentlash</string>
+     </property>
+     <addaction name="actionQubit_amlitudalarini_kvant_holatida_taqsimlash"/>
+     <addaction name="actionOtsu"/>
+     <addaction name="actionQuantum_K_means"/>
+     <addaction name="actionQSVC_Quantum_Support_Vector_Clustering"/>
+     <addaction name="actionSuperpozitsiya_va_kvant_yadrolari"/>
+     <addaction name="actionQuantum_edge_assisted_segmentation"/>
+     <addaction name="actionKonturni_kvantda_aniqlab_regionlarni_ajratish"/>
+    </widget>
+    <addaction name="menuTasvirni_o_qish_va_formatlash_2"/>
+    <addaction name="menuRangmodellarini_o_zgartirish"/>
+    <addaction name="menuTasvir_o_lchamini_tanlash_2"/>
+    <addaction name="menuFiltrlar"/>
+    <addaction name="menuKontrasni_yaxshilash"/>
+    <addaction name="menuIntensivlikni_normallashtirish_2"/>
+    <addaction name="menuKonturlarni_ajratish_2"/>
+    <addaction name="menuBinarlash_2"/>
+    <addaction name="actionMorfologik_ishlov_berish"/>
+    <addaction name="menuSegmentlash_2"/>
+    <addaction name="actionBelgilarni_ajratish_2"/>
+    <addaction name="actionTasniflash_va_tanib_olish_2"/>
+   </widget>
+   <widget class="QMenu" name="menuDastur_haqida">
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Dastur haqida</string>
+    </property>
+    <addaction name="actionIshlab_chiqilgan_joyi"/>
+    <addaction name="actionMualliflar"/>
+    <addaction name="actionKlassik_usullar_haqida"/>
+    <addaction name="actionKvant_usullar_haqida"/>
+   </widget>
+   <widget class="QMenu" name="menuYordam">
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Yordam</string>
+    </property>
+    <property name="icon">
+     <iconset theme="Yordam">
+      <normaloff>.</normaloff>.</iconset>
+    </property>
+    <addaction name="actionFoydalanish_qo_llanmasi"/>
+   </widget>
+   <widget class="QMenu" name="menuTasniflash_va_tanib_olish">
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Tasniflash va tanib olish</string>
+    </property>
+    <addaction name="actionKlassik_usul"/>
+    <addaction name="actionKvant_usul"/>
+   </widget>
+   <widget class="QMenu" name="menuBaholash">
+    <property name="font">
+     <font>
+      <family>Times New Roman</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Baholash</string>
+    </property>
+    <widget class="QMenu" name="menuEtalonlli">
+     <property name="title">
+      <string>Etalonlli</string>
+     </property>
+     <addaction name="actionTurlarini_yozish"/>
+    </widget>
+    <widget class="QMenu" name="menuEtalonsiz">
+     <property name="title">
+      <string>Etalonsiz</string>
+     </property>
+     <addaction name="actionBrisque"/>
+    </widget>
+    <addaction name="menuEtalonlli"/>
+    <addaction name="menuEtalonsiz"/>
+   </widget>
+   <addaction name="menuFayl"/>
+   <addaction name="menuKlassik_usullar"/>
+   <addaction name="menuKvant_usullar"/>
+   <addaction name="menuBaholash"/>
+   <addaction name="menuTasniflash_va_tanib_olish"/>
+   <addaction name="menuDastur_haqida"/>
+   <addaction name="menuYordam"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionOchish"/>
+   <addaction name="actionSaqlash"/>
+   <addaction name="actionQayta_saqlash"/>
+   <addaction name="actionChiqish"/>
+  </widget>
+  <action name="actionOchish">
+   <property name="icon">
+    <iconset resource="rasm/icon.qrc">
+     <normaloff>:/rasmlar/open-open-file-16.png</normaloff>:/rasmlar/open-open-file-16.png</iconset>
+   </property>
+   <property name="text">
+    <string>Ochish</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>13</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+   <property name="priority">
+    <enum>QAction::NormalPriority</enum>
+   </property>
+  </action>
+  <action name="actionSaqlash">
+   <property name="icon">
+    <iconset resource="rasm/icon.qrc">
+     <normaloff>:/rasmlar/save-32-16.png</normaloff>:/rasmlar/save-32-16.png</iconset>
+   </property>
+   <property name="text">
+    <string>Saqlash</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="actionQayta_saqlash">
+   <property name="icon">
+    <iconset resource="rasm/icon.qrc">
+     <normaloff>:/rasmlar/save-as-10-16.png</normaloff>:/rasmlar/save-as-10-16.png</iconset>
+   </property>
+   <property name="text">
+    <string>Qayta saqlash</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+S</string>
+   </property>
+  </action>
+  <action name="actionChiqish">
+   <property name="icon">
+    <iconset resource="rasm/icon.qrc">
+     <normaloff>:/rasmlar/exit-43-16.png</normaloff>:/rasmlar/exit-43-16.png</iconset>
+   </property>
+   <property name="text">
+    <string>Chiqish</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+X</string>
+   </property>
+  </action>
+  <action name="actionTasniflash_va_tanib_olish">
+   <property name="text">
+    <string>Tasniflash va tanib olish</string>
+   </property>
+   <property name="font">
+    <font>
+     <family>Times New Roman</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+  </action>
+  <action name="actionMorfologik_ishlov_berish">
+   <property name="text">
+    <string>Morfologik ishlov berish</string>
+   </property>
+  </action>
+  <action name="actionBelgilarni_ajratish_2">
+   <property name="text">
+    <string>Belgilarni ajratish</string>
+   </property>
+  </action>
+  <action name="actionTasniflash_va_tanib_olish_2">
+   <property name="text">
+    <string>Tasniflash va tanib olish</string>
+   </property>
+  </action>
+  <action name="actionIshlab_chiqilgan_joyi">
+   <property name="text">
+    <string>Ishlab chiqilgan joyi</string>
+   </property>
+  </action>
+  <action name="actionMualliflar">
+   <property name="text">
+    <string>Mualliflar</string>
+   </property>
+  </action>
+  <action name="actionKlassik_usullar_haqida">
+   <property name="text">
+    <string>Klassik usullar haqida</string>
+   </property>
+  </action>
+  <action name="actionKvant_usullar_haqida">
+   <property name="text">
+    <string>Kvant usullar haqida</string>
+   </property>
+  </action>
+  <action name="actionFoydalanish_qo_llanmasi">
+   <property name="icon">
+    <iconset resource="rasm/icon.qrc">
+     <normaloff>:/rasmlar/question-41-16.png</normaloff>:/rasmlar/question-41-16.png</iconset>
+   </property>
+   <property name="text">
+    <string>Foydalanish qo'llanmasi</string>
+   </property>
+  </action>
+  <action name="actionTasvirni_o_qish">
+   <property name="text">
+    <string>Tasvirni o'qish</string>
+   </property>
+  </action>
+  <action name="actionResize_normalization">
+   <property name="text">
+    <string>Resize / normalization</string>
+   </property>
+  </action>
+  <action name="actionRGB_Grayscale">
+   <property name="text">
+    <string>RGB-&gt;Grayscale</string>
+   </property>
+  </action>
+  <action name="actionRGB_HSV_Lab">
+   <property name="text">
+    <string>RGB-&gt;HSV/Lab</string>
+   </property>
+  </action>
+  <action name="actionRGB_kanallarni_saqlash">
+   <property name="text">
+    <string>RGB kanallarni saqlash</string>
+   </property>
+  </action>
+  <action name="actionNearest_neihbor">
+   <property name="text">
+    <string>Nearest neihbor</string>
+   </property>
+  </action>
+  <action name="actionBilinear_interpolaton">
+   <property name="text">
+    <string>Bilinear interpolaton</string>
+   </property>
+  </action>
+  <action name="actionBicubic_interpolation">
+   <property name="text">
+    <string>Bicubic interpolation</string>
+   </property>
+  </action>
+  <action name="actionLanczos_interpolation">
+   <property name="text">
+    <string>Lanczos interpolation</string>
+   </property>
+  </action>
+  <action name="actionImage_downsampling_upsampling">
+   <property name="text">
+    <string>Image downsampling/upsampling</string>
+   </property>
+  </action>
+  <action name="actionResolution_normalization">
+   <property name="text">
+    <string>Resolution normalization</string>
+   </property>
+  </action>
+  <action name="actionCropping_resize">
+   <property name="text">
+    <string>Cropping+resize</string>
+   </property>
+  </action>
+  <action name="actionMean">
+   <property name="text">
+    <string>Mean</string>
+   </property>
+  </action>
+  <action name="actionMedian">
+   <property name="text">
+    <string>Median</string>
+   </property>
+  </action>
+  <action name="actionGaussian">
+   <property name="text">
+    <string>Gaussian</string>
+   </property>
+  </action>
+  <action name="actionBilateral">
+   <property name="text">
+    <string>Bilateral</string>
+   </property>
+  </action>
+  <action name="actionFourier_transform">
+   <property name="text">
+    <string>Fourier transform</string>
+   </property>
+  </action>
+  <action name="actionWavelet_denoising">
+   <property name="text">
+    <string>Wavelet denoising</string>
+   </property>
+  </action>
+  <action name="actionWiener">
+   <property name="text">
+    <string>Wiener</string>
+   </property>
+  </action>
+  <action name="actionMin_Max">
+   <property name="text">
+    <string>Min-Max</string>
+   </property>
+  </action>
+  <action name="actionLinear_contrast_stretching">
+   <property name="text">
+    <string>Linear contrast stretching</string>
+   </property>
+  </action>
+  <action name="actionLogarithmic_transform">
+   <property name="text">
+    <string>Logarithmic transform</string>
+   </property>
+  </action>
+  <action name="actionPower_law_Gamma_correction">
+   <property name="text">
+    <string>Power-law(Gamma correction)</string>
+   </property>
+  </action>
+  <action name="actionHistogram_equalization_HE">
+   <property name="text">
+    <string>Histogram equalization (HE)</string>
+   </property>
+  </action>
+  <action name="actionAdaptive_histogram_equalization_AHE">
+   <property name="text">
+    <string>Adaptive histogram equalization (AHE)</string>
+   </property>
+  </action>
+  <action name="actionContrst_Limited_AHE_CLAHE">
+   <property name="text">
+    <string>Contrst Limited AHE (CLAHE)</string>
+   </property>
+  </action>
+  <action name="actionHigh_pass">
+   <property name="text">
+    <string>High-pass</string>
+   </property>
+  </action>
+  <action name="actionUnsharp_masking">
+   <property name="text">
+    <string>Unsharp masking</string>
+   </property>
+  </action>
+  <action name="actionMin_Max_2">
+   <property name="text">
+    <string>Min-Max</string>
+   </property>
+  </action>
+  <action name="actionZ_score">
+   <property name="text">
+    <string>Z-score</string>
+   </property>
+  </action>
+  <action name="actionMean_2">
+   <property name="text">
+    <string>Mean</string>
+   </property>
+  </action>
+  <action name="actionL2">
+   <property name="text">
+    <string>L2</string>
+   </property>
+  </action>
+  <action name="actionHistogram">
+   <property name="text">
+    <string>Histogram</string>
+   </property>
+  </action>
+  <action name="actionDynamic_range_scaling_0_255_0_1">
+   <property name="text">
+    <string>Dynamic range scaling(0-255-&gt;0-1)</string>
+   </property>
+  </action>
+  <action name="actionContrast_stretching">
+   <property name="text">
+    <string>Contrast stretching</string>
+   </property>
+  </action>
+  <action name="actionSobel">
+   <property name="text">
+    <string>Sobel</string>
+   </property>
+  </action>
+  <action name="actionPrewitt">
+   <property name="text">
+    <string>Prewitt</string>
+   </property>
+  </action>
+  <action name="actionRoberts_cross">
+   <property name="text">
+    <string>Roberts cross</string>
+   </property>
+  </action>
+  <action name="actionLaplacian_of_Gaussian_LoG">
+   <property name="text">
+    <string>Laplacian of Gaussian (LoG)</string>
+   </property>
+  </action>
+  <action name="actionCanny_edge_detection">
+   <property name="text">
+    <string>Canny edge detection</string>
+   </property>
+  </action>
+  <action name="actionThresholding">
+   <property name="text">
+    <string>Thresholding</string>
+   </property>
+  </action>
+  <action name="actionKirsch_Schar">
+   <property name="text">
+    <string>Kirsch, Schar</string>
+   </property>
+  </action>
+  <action name="actionAniq_threshold">
+   <property name="text">
+    <string>Aniq threshold</string>
+   </property>
+  </action>
+  <action name="actionDeteministik">
+   <property name="text">
+    <string>Deteministik</string>
+   </property>
+  </action>
+  <action name="actionKodlashdan_oldin">
+   <property name="text">
+    <string>Kodlashdan oldin</string>
+   </property>
+  </action>
+  <action name="actionErosion">
+   <property name="text">
+    <string>Erosion</string>
+   </property>
+  </action>
+  <action name="actionDilation">
+   <property name="text">
+    <string>Dilation</string>
+   </property>
+  </action>
+  <action name="actionopening">
+   <property name="text">
+    <string>Opening</string>
+   </property>
+  </action>
+  <action name="actionCloseing">
+   <property name="text">
+    <string>Closeing</string>
+   </property>
+  </action>
+  <action name="actionStructuring_element">
+   <property name="text">
+    <string>Structuring element</string>
+   </property>
+  </action>
+  <action name="actionKontur">
+   <property name="text">
+    <string>Kontur</string>
+   </property>
+  </action>
+  <action name="actionGradient">
+   <property name="text">
+    <string>Gradient</string>
+   </property>
+  </action>
+  <action name="actionKodlashdan_oldin_2">
+   <property name="text">
+    <string>Kodlashdan oldin</string>
+   </property>
+  </action>
+  <action name="actionOtsu_thresholding">
+   <property name="text">
+    <string>Otsu thresholding</string>
+   </property>
+  </action>
+  <action name="actionAdaptive_thresholding">
+   <property name="text">
+    <string>Adaptive thresholding</string>
+   </property>
+  </action>
+  <action name="actionRegion_growing">
+   <property name="text">
+    <string>Region growing</string>
+   </property>
+  </action>
+  <action name="actionRegion_splotting_merging">
+   <property name="text">
+    <string>Region splotting&amp; merging</string>
+   </property>
+  </action>
+  <action name="actionContour_detection_segmentation">
+   <property name="text">
+    <string>Contour detection-&gt;segmentation</string>
+   </property>
+  </action>
+  <action name="actionK_means">
+   <property name="text">
+    <string>K-means</string>
+   </property>
+  </action>
+  <action name="actionFuzzy_C_means">
+   <property name="text">
+    <string>Fuzzy C-means</string>
+   </property>
+  </action>
+  <action name="actionGradient_va_topologiya_asosida_obektlarni_ajratish">
+   <property name="text">
+    <string>Gradient va topologiya asosida obektlarni ajratish</string>
+   </property>
+  </action>
+  <action name="actionXaff_usullari">
+   <property name="text">
+    <string>Xaff usullari</string>
+   </property>
+  </action>
+  <action name="actionQuantum_encoding">
+   <property name="text">
+    <string>Quantum encoding</string>
+   </property>
+  </action>
+  <action name="actionimage_processing">
+   <property name="text">
+    <string>image processing</string>
+   </property>
+  </action>
+  <action name="actionMeasurement">
+   <property name="text">
+    <string>Measurement</string>
+   </property>
+  </action>
+  <action name="actionRangni_kodlash">
+   <property name="text">
+    <string>Rangni kodlash</string>
+   </property>
+  </action>
+  <action name="actionFRQI">
+   <property name="text">
+    <string>FRQI</string>
+   </property>
+  </action>
+  <action name="actionNEQR">
+   <property name="text">
+    <string>NEQR</string>
+   </property>
+  </action>
+  <action name="actionFRQI_2">
+   <property name="text">
+    <string>FRQI</string>
+   </property>
+  </action>
+  <action name="actionNEQR_2">
+   <property name="text">
+    <string>NEQR</string>
+   </property>
+  </action>
+  <action name="actionQuantum_measurement_based_denoising">
+   <property name="text">
+    <string>Quantum measurement-based denoising</string>
+   </property>
+  </action>
+  <action name="actionWavelet_Transform">
+   <property name="text">
+    <string>Wavelet Transform</string>
+   </property>
+  </action>
+  <action name="actionGaussian_2">
+   <property name="text">
+    <string>Gaussian</string>
+   </property>
+  </action>
+  <action name="actionMedian_2">
+   <property name="text">
+    <string>Median</string>
+   </property>
+  </action>
+  <action name="actionFourier_Transform">
+   <property name="text">
+    <string>Fourier Transform</string>
+   </property>
+  </action>
+  <action name="actionState_averaging">
+   <property name="text">
+    <string>State averaging</string>
+   </property>
+  </action>
+  <action name="actionImage_denoising_circuits">
+   <property name="text">
+    <string>Image denoising circuits</string>
+   </property>
+  </action>
+  <action name="actionHistogram_equalization_QHE">
+   <property name="text">
+    <string>Histogram equalization (QHE)</string>
+   </property>
+  </action>
+  <action name="actionamplitude_redistribution">
+   <property name="text">
+    <string>amplitude redistribution</string>
+   </property>
+  </action>
+  <action name="actionFourier_Transform_QGT">
+   <property name="text">
+    <string>Fourier Transform (QFT)</string>
+   </property>
+  </action>
+  <action name="actioncontrast_enhancement_circuits">
+   <property name="text">
+    <string>contrast enhancement circuits</string>
+   </property>
+  </action>
+  <action name="actionHybrid_qoantum_classical">
+   <property name="text">
+    <string>Hybrid quantum-classical</string>
+   </property>
+  </action>
+  <action name="actionAmplitude_normalization">
+   <property name="text">
+    <string>Amplitude normalization</string>
+   </property>
+  </action>
+  <action name="actionProbability_normalization">
+   <property name="text">
+    <string>Probability normalization</string>
+   </property>
+  </action>
+  <action name="actionGradient_operator">
+   <property name="text">
+    <string>Gradient operator</string>
+   </property>
+  </action>
+  <action name="actionImage_representation_NEQR_FRQI">
+   <property name="text">
+    <string>Image representation (NEQR, FRQI)</string>
+   </property>
+  </action>
+  <action name="actionControlled_Not_CNOT">
+   <property name="text">
+    <string>Controlled-Not(CNOT)</string>
+   </property>
+  </action>
+  <action name="actionToffoli_gate_piksel_farqlari">
+   <property name="text">
+    <string>Toffoli gate piksel farqlari</string>
+   </property>
+  </action>
+  <action name="actionQuantum_Sobel">
+   <property name="text">
+    <string>Quantum Sobel</string>
+   </property>
+  </action>
+  <action name="actionQFT_Quantum_Fourier_Transform">
+   <property name="text">
+    <string>QFT(Quantum Fourier Transform)</string>
+   </property>
+  </action>
+  <action name="actionHybrid_quantum_classical">
+   <property name="text">
+    <string>Hybrid quantum-classical</string>
+   </property>
+  </action>
+  <action name="actionKvant_o_lcham">
+   <property name="text">
+    <string>Kvant o'lcham</string>
+   </property>
+  </action>
+  <action name="actionEhtimoliy">
+   <property name="text">
+    <string>Ehtimoliy</string>
+   </property>
+  </action>
+  <action name="actionQubit_amlitudalarini_kvant_holatida_taqsimlash">
+   <property name="text">
+    <string>Qubit amlitudalarini kvant holatida taqsimlash</string>
+   </property>
+  </action>
+  <action name="actionOtsu">
+   <property name="text">
+    <string>Otsu</string>
+   </property>
+  </action>
+  <action name="actionQuantum_K_means">
+   <property name="text">
+    <string>Quantum K-means</string>
+   </property>
+  </action>
+  <action name="actionQSVC_Quantum_Support_Vector_Clustering">
+   <property name="text">
+    <string>QSVC (Quantum Support Vector Clustering)</string>
+   </property>
+  </action>
+  <action name="actionSuperpozitsiya_va_kvant_yadrolari">
+   <property name="text">
+    <string>Superpozitsiya va kvant yadrolari</string>
+   </property>
+  </action>
+  <action name="actionQuantum_edge_assisted_segmentation">
+   <property name="text">
+    <string>Quantum edge-assisted segmentation</string>
+   </property>
+  </action>
+  <action name="actionKonturni_kvantda_aniqlab_regionlarni_ajratish">
+   <property name="text">
+    <string>Konturni kvantda aniqlab regionlarni ajratish</string>
+   </property>
+  </action>
+  <action name="actionKlassik_usul">
+   <property name="text">
+    <string>Klassik usul</string>
+   </property>
+  </action>
+  <action name="actionKvant_usul">
+   <property name="text">
+    <string>Kvant usul</string>
+   </property>
+  </action>
+  <action name="actionTurlarini_yozish">
+   <property name="text">
+    <string>Turlarini yozish</string>
+   </property>
+  </action>
+  <action name="actionBrisque">
+   <property name="text">
+    <string>Brisque</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="rasm/icon.qrc"/>
+ </resources>
+ <connections/>
+</ui>

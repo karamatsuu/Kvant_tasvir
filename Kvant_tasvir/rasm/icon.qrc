@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="rasmlar">
+    <file>question-41-16.png</file>
+    <file>open-open-file-16.png</file>
+    <file>exit-43-16.png</file>
+    <file>save-32-16.png</file>
+    <file>save-as-10-16.png</file>
+  </qresource>
+</RCC>
