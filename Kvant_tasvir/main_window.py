@@ -7,7 +7,7 @@ from typing import Any, Dict, Optional, Tuple
 import numpy as np
 from PyQt5.QtCore import QSize, Qt
 from PyQt5.QtGui import QImage, QPixmap
-from PyQt5.QtWidgets import QApplication, QMainWindow, QToolBar
+from PyQt5.QtWidgets import QAction, QApplication, QMainWindow, QMessageBox, QToolBar
 
 APP_DIR = Path(__file__).resolve().parent
 if str(APP_DIR) not in sys.path:
@@ -62,6 +62,7 @@ class MainWindow(QMainWindow):
         self.file_menu.error.connect(self._on_error)
         self.ui.algorithm_tree.algorithmSelected.connect(self._on_algorithm_selected)
         self.ui.mainSplitter.splitterMoved.connect(lambda *_: self._refresh_pixmap_sizes())
+        self._bind_application_actions()
 
     def resizeEvent(self, event):
         super().resizeEvent(event)
@@ -108,6 +109,73 @@ class MainWindow(QMainWindow):
 
     def _on_error(self, msg: str) -> None:
         self.statusBar().showMessage(msg, 5000)
+
+    def pixmap_for_save(self) -> Optional[QPixmap]:
+        current_label = self.ui.tabWidget.currentWidget().findChild(type(self.ui.label))
+        if current_label is not None and current_label.pixmap() is not None:
+            pixmap = current_label.pixmap()
+            if pixmap is not None and not pixmap.isNull():
+                if current_label is self.ui.label and self.file_menu.state.pixmap is not None:
+                    return self.file_menu.state.pixmap
+                return pixmap
+
+        for pixmap in (
+            self._last_processed_pixmap,
+            self._last_quantum_pixmap,
+            self._last_classical_pixmap,
+            self.file_menu.state.pixmap,
+        ):
+            if pixmap is not None and not pixmap.isNull():
+                return pixmap
+        return None
+
+    def _bind_application_actions(self) -> None:
+        file_actions = {
+            "actionOchish",
+            "actionSaqlash",
+            "actionQayta_saqlash",
+            "actionChiqish",
+            "actionToggleLeftPanel",
+        }
+        info_actions = self._info_action_messages()
+
+        for action in self.findChildren(QAction):
+            action_id = action.objectName()
+            if not action_id or action_id in file_actions:
+                continue
+            try:
+                action.triggered.disconnect()
+            except TypeError:
+                pass
+
+            if self.pipeline_controller.can_execute(action_id):
+                action.triggered.connect(lambda _checked=False, name=action_id: self._on_algorithm_selected(name))
+            else:
+                message = info_actions.get(action_id, "Bu bo'lim uchun alohida algoritm tanlang.")
+                action.triggered.connect(
+                    lambda _checked=False, title=action.text(), text=message: self._show_info(title, text)
+                )
+
+    def _info_action_messages(self) -> Dict[str, str]:
+        return {
+            "actionIshlab_chiqilgan_joyi": "Kvant tasvirlar bilan ishlash dasturi.",
+            "actionMualliflar": "Mualliflar ma'lumoti loyiha hujjatlariga kiritiladi.",
+            "actionKlassik_usullar_haqida": "Klassik usullar OpenCV asosidagi tasvir ishlov berish algoritmlarini ishga tushiradi.",
+            "actionKvant_usullar_haqida": "Kvant usullar kvant tasvirlash va segmentlash jarayonlarining simulyatsiyalarini bajaradi.",
+            "actionFoydalanish_qo_llanmasi": "Rasmni oching, chap panel yoki menyudan algoritm tanlang, parametrlarni sozlang va natijani saqlang.",
+            "actionTasniflash_va_tanib_olish": "Tasniflash bo'limi uchun klassik yoki kvant usulni tanlang.",
+            "actionTasniflash_va_tanib_olish_2": "Tasniflash bo'limi uchun klassik yoki kvant usulni tanlang.",
+            "actionBelgilarni_ajratish_2": "Belgilarni ajratish bo'limidan aniq algoritm tanlang.",
+            "actionMorfologik_ishlov_berish": "Morfologik ishlov berish bo'limidan erosion, dilation, opening yoki closing tanlang.",
+            "actionKlassik_usul": "Klassik tasniflash moduli hozircha ko'rgazmali rejimda.",
+            "actionKvant_usul": "Kvant tasniflash moduli hozircha ko'rgazmali rejimda.",
+            "actionTurlarini_yozish": "Etalonli baholash moduli hozircha ko'rgazmali rejimda.",
+            "actionBrisque": "BRISQUE baholash moduli hozircha ko'rgazmali rejimda.",
+        }
+
+    def _show_info(self, title: str, message: str) -> None:
+        self.statusBar().showMessage(message, 5000)
+        QMessageBox.information(self, title or "Ma'lumot", message)
 
     def _on_algorithm_selected(self, action_id: str) -> None:
         self.current_action = action_id

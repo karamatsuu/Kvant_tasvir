@@ -29,7 +29,7 @@ class FileMenuController(QObject):
         super().__init__(main_window)
         self._mw = main_window
         self._label = target_label
-        self._labels = self._collect_image_labels(target_label)
+        self._labels = [target_label]
         self.state = FileState()
 
     # -------- Wiring (main_window.py dan chaqiriladi) --------
@@ -75,7 +75,8 @@ class FileMenuController(QObject):
             self.save_image_as_dialog()
             return
 
-        ok = self.state.pixmap.save(self.state.current_path)
+        pixmap = self._pixmap_to_save()
+        ok = pixmap.save(self.state.current_path)
         if not ok:
             self._show_error("Saqlab bo‘lmadi. Papkaga ruxsat yoki yo‘l muammosi bo‘lishi mumkin.")
             return
@@ -96,7 +97,8 @@ class FileMenuController(QObject):
         if not path:
             return
 
-        ok = self.state.pixmap.save(path)
+        pixmap = self._pixmap_to_save()
+        ok = pixmap.save(path)
         if not ok:
             self._show_error("Qayta saqlab bo‘lmadi. Fayl nomi/format yoki ruxsat muammosi bo‘lishi mumkin.")
             return
@@ -132,14 +134,13 @@ class FileMenuController(QObject):
         if self.state.pixmap and not self.state.pixmap.isNull():
             self._render_pixmap()
 
-    def _collect_image_labels(self, fallback_label: QLabel):
-        ui = getattr(self._mw, "ui", None)
-        labels = []
-        for name in ("label", "label_2", "label_3", "label_10", "label_11", "label_12"):
-            label = getattr(ui, name, None) if ui is not None else None
-            if isinstance(label, QLabel):
-                labels.append(label)
-        return labels or [fallback_label]
+    def _pixmap_to_save(self) -> QPixmap:
+        getter = getattr(self._mw, "pixmap_for_save", None)
+        if callable(getter):
+            pixmap = getter()
+            if pixmap is not None and not pixmap.isNull():
+                return pixmap
+        return self.state.pixmap
 
     def _show_error(self, msg: str):
         self.error.emit(msg)
